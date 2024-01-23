@@ -1,0 +1,14 @@
+#allbody {
+  padding-top: 5%;
+}
+
+h1 {
+  text-align: center;
+  padding: 5% 0;
+}
+#finalResult {
+  margin-top: 1.5rem;
+  background-color: #f8f9fa;
+  padding: 5%;
+  border-radius: 10px;
+}

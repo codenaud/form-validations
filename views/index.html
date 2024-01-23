@@ -1,0 +1,204 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="../models/user.js"></script>
+    <script src="../models/country.js"></script>
+    <script src="../controllers/controller.js"></script>
+</head>
+
+<body>
+    <div id="allbody" class="container">
+        <h1>Travel Exercise</h1>
+
+        <!-- FORM => Create User -->
+
+        <div id="create-user-form">
+
+            <div class="row">
+                <div class="col">
+                    <label for="nameInput" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="nameInput">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="lastname" class="form-label">lastname</label>
+                    <input type="text" class="form-control" id="lastnameInput">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary mb-2" onclick="submitUser()">Create user</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FORM => Create Country -->
+
+        <div id="create-country-form" style="display: none;">
+
+            <div class="row pb-3">
+                <!-- Formulario para Country 1 (visible inicialmente) -->
+                <div class="col">
+                    <label for="countryInput1" class="form-label">Country 1</label>
+                    <input type="text" class="form-control" id="countryInput1">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required.
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="visitInput1" class="form-label">Visit 1</label>
+                    <input type="number" class="form-control" id="visitInput1">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario para Country 2 (oculto inicialmente) -->
+            <div class="row pb-3 d-none" id="country-form-2">
+                <div class="col">
+                    <label for="countryInput2" class="form-label">Country 2</label>
+                    <input type="text" class="form-control" id="countryInput2">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="visitInput2" class="form-label">Visit 2</label>
+                    <input type="number" class="form-control" id="visitInput2">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+            </div>
+            <!-- Formulario para Country 3 (oculto inicialmente) -->
+            <div class="row pb-3 d-none" id="country-form-3">
+                <div class="col">
+                    <label for="countryInput3" class="form-label">Country 3</label>
+                    <input type="text" class="form-control" id="countryInput3">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="visitInput3" class="form-label">Visit 3</label>
+                    <input type="number" class="form-control" id="visitInput3">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+            </div>
+            <!-- Formulario para Country 4 (oculto inicialmente) -->
+            <div class="row pb-3 d-none" id="country-form-4">
+                <div class="col">
+                    <label for="countryInput4" class="form-label">Country 4</label>
+                    <input type="text" class="form-control" id="countryInput4">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="visitInput4" class="form-label">Visit 4</label>
+                    <input type="number" class="form-control" id="visitInput4">
+                    <!-- Mensajes validación formulario -->
+                    <div id="errorName" class="invalid-feedback">This field is required
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary mb-2" onclick="submitCountryForm()">Add
+                        Country</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM => Result User Form -->
+
+        <div id="result-user-form" style="display: none;">
+
+            <div class="row">
+
+                <div class="col create-user-output">
+                    <p id="userTitle"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col create-user-output">
+                    <p id="nameOutput">
+                    <p>
+                </div>
+
+                <div class="col create-user-output">
+                    <p id="lastnameOutput"></p>
+                </div>
+
+                <div class="col create-user-output"></div>
+
+            </div>
+        </div>
+
+        <!-- FORM => Result Country Form -->
+
+        <div id="result-country-form">
+
+            <div class="row">
+
+                <div class="col create-user-output">
+                    <p id="countryTitle"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col create-user-output">
+                    <p id="countryOutput1">
+                    <p>
+                </div>
+
+                <div class="col create-user-output">
+                    <p id="countryOutput2"></p>
+                </div>
+
+                <div class="col create-user-output">
+                    <p id="countryOutput3"></p>
+                </div>
+
+                <div class="col create-user-output">
+                    <p id="countryOutput4"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Final Result -->
+
+        <div id="finalResult" style="display: none;">
+
+            <div class="row">
+
+                <div class="col create-user-output">
+                    <p id="result"></p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
