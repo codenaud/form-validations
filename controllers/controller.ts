@@ -4,9 +4,9 @@ let errors: number = 0;
 
 // Regex validación formularios
 const validateExpressions = {
-  name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/,
-  lastname: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/,
-  country: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/,
+  name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜÇç\s'-]+$/,
+  lastname: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜÇç\s'-]+$/,
+  country: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜÇç\s'-]+$/,
   visit: /^[0-9]+$/,
 };
 
