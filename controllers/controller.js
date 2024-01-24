@@ -3,9 +3,9 @@ var user;
 var errors = 0;
 // Regex validación formularios
 var validateExpressions = {
-    name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/,
-    lastname: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/,
-    country: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s'-]+$/,
+    name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜçÇ\s'-]+$/,
+    lastname: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜçÇ\s'-]+$/,
+    country: /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜçÇ\s'-]+$/,
     visit: /^[0-9]+$/,
 };
 // validación formularios
